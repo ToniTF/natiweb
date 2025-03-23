@@ -1,18 +1,16 @@
 from django.shortcuts import render
 from .forms import ProyectoForm
-
-# Create your views here.
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Proyecto
-from .forms import ProyectoForm
-from. import views
-
-from django.shortcuts import render
 
 def home_view(request):
     # Lógica de la vista
     return render(request, 'home.html')
+
+def contacto_view(request):
+    # Lógica para la vista de contacto
+    return render(request, 'contacto.html')
 
 class ProyectoListView(ListView):
     model = Proyecto
@@ -35,4 +33,4 @@ class ProyectoUpdateView(UpdateView):
 class ProyectoDeleteView(DeleteView):
     model = Proyecto
     template_name = 'proyecto_confirm_delete.html'
-    success_url = reverse_lazy('proyecto-lista')
+    success_url = reverse_lazy('principal:proyecto-lista')  # Asegúrate de que tiene el namespace

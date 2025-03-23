@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Bienvenido a Mi Portafolio Web</h1>
+    <p>Aquí encontrarás información sobre mis proyectos y habilidades.</p>
+    
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Mis Proyectos</h5>
+                    <p class="card-text">Explora los diferentes proyectos en los que he trabajado.</p>
+                    <a href="{% url 'principal:proyecto-lista' %}" class="btn btn-primary">Ver Proyectos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

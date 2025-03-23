@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-      path('admin/', admin.site.urls),
-      path('', include('principal.urls')),  # Incluye las URLs de la aplicación 'principal'
-  ]
+    path('admin/', admin.site.urls),
+    path('', include('principal.urls')),  # El namespace ya está en principal.urls
+]
 

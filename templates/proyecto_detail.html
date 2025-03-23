@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ object.nombre }}{% endblock %}
+
+{% block content %}
+<h1>{{ object.nombre }}</h1>
+<p>{{ object.descripcion }}</p>
+<p><strong>Tecnologías:</strong> {{ object.tecnologias }}</p>
+{% if object.imagen %}
+<img src="{{ object.imagen.url }}" alt="{{ object.nombre }}">
+{% endif %}
+{% if object.enlace %}
+<p><a href="{{ object.enlace }}" target="_blank">Ver más</a></p>
+{% endif %}
+{% endblock %}
+
